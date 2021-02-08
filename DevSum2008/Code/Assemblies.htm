@@ -1,0 +1,53 @@
+﻿<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Dynamic Assemblies</title>
+    	<style type="text/css">
+.style1 {
+	color: #008080;
+}
+</style>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">Dynamic Assemblies</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>                               
+                               
+        <font color="blue">public partial class</font> <font color="teal">DynamicAssemblies</font> : System.Web.UI.<font
+            color="teal">Page</font>
+        {
+            ...
+
+                <font color="blue">protected void </font>btnRun_Click(<font color="blue">object</font> sender, EventArgs e)
+                {
+                    <font color="teal">BusinessLayer</font> bl = <font color="blue">new</font> <font
+                        color="teal">BusinessLayer</font>();
+                    bl.SerializeStuff();
+                    ...
+                }
+        }                
+                
+        <font color="blue">public class</font> <span class="style1">BusinessLayer</span>
+        {
+            ...
+
+                <font color="blue">protected void </font>SerializeStuff()
+                {
+                    <span class="style1">Address</span> a = <font color="blue">new</font> <span class="style1">Address</span>(&quot;MyStreet&quot;, &quot;MyCity&quot;);
+                    <span class="style1">Person</span> p = <font color="blue">new</font> <span class="style1">Person</span>(&quot;My Name&quot;, a);
+                    <span class="style1">Type</span>[] SerializationTypes = <font color="blue">new</font> <span class="style1">Type</span>[1];
+                    SerializationTypes[0] = a.GetType();
+                    <span class="style1">XmlSerializer</span> s = <font color="blue">new</font> <span class="style1">XmlSerializer</span>(p.GetType(), SerializationTypes);
+                    ...
+                }
+        }                
+ 		</pre>
+    </body>
+</html>

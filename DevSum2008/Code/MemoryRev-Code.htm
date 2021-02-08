@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>High Memory Usage Sample Code</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">High Memory Usage Sample</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>                               
+        <font color="blue">public partial class</font> <font color="teal">Memory1Rev</font> : System.Web.UI.<font color="teal">Page</font>
+        {
+            <font color="blue">public</font> <font color="teal">String</font>[] localstrings;
+
+            <font color="blue">public static void</font> OnRemove(<font color="blue">string</font> key, <font color="teal">Object</font> value, System.Web.Caching.<font color="teal">CacheItemRemovedReason</font> reason)
+            {
+                <font color="green">//do some stuff when the object is removed from cache</font>
+            }
+
+            <font color="blue">protected void</font> btnRun_Click(<font color="blue">object</font> sender, <font color="teal">EventArgs</font> e)
+            {        
+                <font color="green">
+                //populate a large local variable - 
+                //this should be removed from memory when the page is</font> 
+                localstrings = <font color="blue">new</font> <font color="teal">String</font>[100000];
+                <font color="blue">for</font> (<font color="blue">int</font> i = 0; i < 100000; i++)
+                {
+                    localstrings[i] = <font color="maroon">"Hello"</font> + i.ToString();
+                }
+
+                <font color="green">//cache a small string for 5 minutes</font>
+                Cache.Add(
+		            <font color="teal">Guid</font>.NewGuid().ToString(),        <font color="green">//key</font>
+		            <font color="maroon">"smallstring"</font>,                    <font color="green">//value</font>
+		            <font color="blue">null</font>,                             <font color="green">//dependencies</font>
+		            <font color="teal">DateTime</font>.Now.AddMinutes(5),       <font color="green">//absolute expiration time (5 minutes)</font>
+		            <font color="teal">TimeSpan</font>.Zero,                    <font color="green">//sliding expiration - none</font>
+		            System.Web.Caching.<font color="teal">CacheItemPriority</font>.Normal, 	<font color="green">//Cache Item Priority</font>
+		            <font color="teal">Memory1Rev</font>.OnRemove);                   <font color="green">//Cache Item Remove Callback</font>
+
+            }
+        }           
+        </pre>
+    </body>
+</html>

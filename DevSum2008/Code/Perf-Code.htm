@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Performance Sample Code</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">Performance 
+						Issue with Locks</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>
+        <font color="blue">public partial class</font> <font color="teal">Perf</font> : System.Web.UI.<font color="teal">Page</font>
+        {
+            ...
+
+                <font color="blue">protected void </font>btnRun_Click(<font color="blue">object</font> sender, EventArgs e)
+                {
+                    <font color="teal">BusinessLayer</font> bl = <font color="blue">new</font> <font color="teal">BusinessLayer</font>();
+                    bl.PerformSomeBusinessOperation();
+                    ...
+                }
+        }                
+                <HR />
+                
+        <font color="blue">public class</font> <font color="teal">BusinessLayer</font>
+        {
+                <font color="blue">static object</font> o = <font color="blue">new object</font>();
+    
+                <font color="blue">public void</font> PerformSomeBusinessOperation(){
+                    <font color="blue">lock</font> (o)
+                    {
+                        System.Threading.<font color="teal">Thread</font>.Sleep(5000);
+                    }
+                }
+        }            
+        </pre>
+    </body>
+</html>

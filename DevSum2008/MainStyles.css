@@ -1,0 +1,22 @@
+﻿h1 {
+	font-family: Candara;
+	font-size: xx-large;
+}
+body {
+	font-family: Candara;
+	font-size: large;
+	background-color: #000000;
+	color: #FFFFCC;
+}
+a {
+	font-family: Candara;
+	font-size: x-large;
+	color: #FFFFCC;
+	text-decoration: none;
+}
+a:hover {
+	color: #9999FF;
+}
+.center {
+	text-align: center;
+}

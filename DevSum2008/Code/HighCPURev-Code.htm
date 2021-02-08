@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>High CPU in GC Sample Code</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">High CPU in GC Sample</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>                               
+        <font color="blue">public partial class</font> <font color="teal">HighCPUInGC</font> : System.Web.UI.<font color="teal">Page</font>
+        {
+            ...
+
+                <font color="blue">protected void </font>btnRun_Click(<font color="blue">object</font> sender, EventArgs e)
+                {
+                    <font color="teal">BusinessLayer</font> bl = <font color="blue">new</font> <font color="teal">BusinessLayer</font>();
+                    bl.ConcatenateBigString();
+                    ...
+                }
+        }                
+                <HR />
+                
+        <font color="blue">public class</font> <font color="teal">BusinessLayer</font>
+        {
+            <font color="blue">public void</font> ConcatenateBigString()
+            {
+                <font color="teal">StringBuilder</font> sb = <font color="blue">new</font> <font color="teal">StringBuilder</font>(<font color="maroon">"&lt;dataset&gt;"</font>);
+                <font color="blue">for</font> (<font color="blue">int</font> i = 0; i < 8000; i++)
+                {
+                    sb.Append(<font color="maroon">"&lt;ID&gt;"</font> + i.ToString() + <font color="maroon">"&lt;/ID&gt;&lt;NAME&gt;NameOfSomePerson&lt;/NAME&gt;"</font>);
+                }
+                sb.Append(<font color="maroon">"&lt;/dataset&gt;"</font>);
+            }     
+        }       
+        </pre>
+    </body>
+</html>

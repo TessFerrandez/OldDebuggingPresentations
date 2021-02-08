@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Application Restarts</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">Application Restarts:</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <div align="left">
+        <pre>
+Application Restart logging code (global.asax):
+
+<span style="font-size: 12pt"><span style="color: blue">void</span> Application_End(<span
+    style="color: blue">object</span> sender, <span style="color: turquoise">EventArgs </span>e) { 
+   <span style="color: turquoise">HttpRuntime</span> runtime = (<span style="color: turquoise">HttpRuntime</span>)<span
+       style="color: blue">typeof</span>(System.Web.<span
+        style="color: turquoise">HttpRuntime</span>).InvokeMember( 
+    										<span style="color: maroon">"_theRuntime"</span>, 
+										<span style="color: turquoise">BindingFlags</span>.NonPublic | <span style="color: turquoise">BindingFlags</span>.Static | <span style="color: turquoise">BindingFlags</span>.GetField, 
+										<span style="color: blue">null</span>, 
+										<span style="color: blue">null</span>, 
+										<span style="color: blue">null</span>); 
+   <span style="color: blue">if</span> (runtime == <span style="color: blue">null</span>) 
+	<span style="color: blue">return</span>;
+<span style="color: blue">   string</span> shutDownMessage = (<span style="color: blue">string</span>)runtime.GetType().InvokeMember(
+    										<span style="color: maroon">"_shutDownMessage"</span>, <span style="color: turquoise">
+        									BindingFlags</span>.NonPublic | <span style="color: turquoise">BindingFlags</span>.Instance | <span style="color: turquoise">BindingFlags</span>.GetField, <span style="color: blue">
+        									null</span>, 
+										runtime, 
+										<span style="color: blue">null</span>); <span style="color: blue">
+   string</span> shutDownStack = (<span style="color: blue">string</span>)runtime.GetType().InvokeMember(
+    										<span style="color: maroon">"_shutDownStack"</span>, <span style="color: turquoise">
+        									BindingFlags</span>.NonPublic | <span style="color: turquoise">BindingFlags</span>.Instance | <span style="color: turquoise">BindingFlags</span>.GetField, <span style="color: blue">
+        									null</span>, 
+										runtime, 
+										<span style="color: blue">null</span>); <span style="color: blue">
+   if</span> (!<span style="color: turquoise">EventLog</span>.SourceExists(<span style="color: maroon">".NET Runtime"</span>)) { 
+	<span style="color: turquoise">EventLog</span>.CreateEventSource(<span
+                    style="color: maroon">".NET Runtime"</span>, <span style="color: maroon">"Application"</span>);
+   } 
+<span style="color: turquoise">   EventLog</span> log = <span style="color: blue">new </span><span style="color: turquoise">EventLog</span>(); 
+   log.Source = <span style="color: maroon">".NET Runtime"</span>; 
+   log.WriteEntry(<span style="color: turquoise">String</span>.Format(
+    				<span style="color: maroon">"\r\n\r\n_shutDownMessage={0}\r\n\r\n_shutDownStack={1}"</span>,
+    				shutDownMessage, 
+				shutDownStack), 
+			<span style="color: turquoise">EventLogEntryType</span>.Error); 
+} </span>
+        </pre>
+        </div>          
+
+    </body>
+</html>

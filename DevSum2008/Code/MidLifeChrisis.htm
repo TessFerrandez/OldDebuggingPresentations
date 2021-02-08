@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Mid-Life Chrisis and Finalizable Objects</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Span1" class="SampleTitle">Mid-Life Chrisis and Finalizable Objects</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>
+                               
+        <font color="blue">protected void <span style="color: #000000">btnRun_Click(</span><font color="blue">object</font><span style="color: #000000"> sender, EventArgs e)</span></font>
+        {
+            <span style="color: teal">StreamReader</span> sr = new <span style="color: teal">StreamReader</span>(<span
+                style="color: maroon">"BigFile.txt"</span>);
+
+            <span style="color: blue">string</span> line, parsed;
+			
+            <span style="color: blue">while</span> ((line = sr.ReadLine()) != <span style="color: blue">null</span>)
+            <span style="color: blue"></span>{
+                <font color="blue"><span style="color: green">//parse contents of file to pass as a
+                    parameter to the webservice</span></font>
+            <span style="color: blue"></span>}
+
+            <span style="color: teal">MyService</span> svc = new <span style="color: teal">MyService</span>(<span
+                style="color: maroon"></span>);
+            <span style="color: teal"></span>svc.PerformSomeLongRunningOperation(parsed);
+
+        }                
+                                
+        </pre>
+    </body>
+</html>

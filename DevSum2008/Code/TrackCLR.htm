@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Exception Config File</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">Exception Config File</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <pre>                               
+&lt;ADPLUS&gt;
+	&lt;SETTINGS&gt;
+		&lt;RUNMODE&gt;<font color="blue">CRASH</font>&lt;/RUNMODE&gt;
+	   	&lt;OUTPUTDIR&gt;<font color="blue">c:\exceptionlogs</font> &lt;/OUTPUTDIR&gt;   
+		&lt;PROCESSNAME&gt;<font color="blue">w3wp.exe</font> &lt;/PROCESSNAME&gt;	
+	&lt;/SETTINGS&gt;
+	&lt;PRECOMMANDS&gt;
+		&lt;CMD&gt;<font color="blue">!load c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\sos</font>&lt;/CMD&gt;
+	&lt;/PRECOMMANDS&gt;
+	&lt;EXCEPTIONS&gt;
+		&lt;OPTION&gt;<font color="blue">NoDumpOnFirstChance</font>&lt;/OPTION&gt;
+		&lt;OPTION&gt;<font color="blue">NoDumpOnSecondChance</font>&lt;/OPTION&gt;
+		&lt;CONFIG&gt;
+			&lt;CODE&gt;<font color="blue">clr</font>&lt;/CODE&gt;
+			&lt;ACTIONS1&gt;<font color="blue">Log</font>&lt;/ACTIONS1&gt;
+			&lt;CUSTOMACTIONS1&gt;<font color="blue">!pe;!clrstack;gn</font> &lt;/CUSTOMACTIONS1&gt;
+			&lt;RETURNACTION1&gt;<font color="blue">GN</font>&lt;/RETURNACTION1&gt;
+		&lt;/CONFIG&gt;
+        	&lt;NEWEXCEPTION&gt;
+            		&lt;CODE&gt;<font color="blue">0xc0000094</font>&lt;/CODE&gt;
+            		&lt;NAME&gt;<font color="blue">IntegerDivide</font>&lt;/NAME&gt;
+        	&lt;/NEWEXCEPTION&gt;
+		&lt;CONFIG&gt;
+			&lt;CODE&gt;<font color="blue">0xc0000094</font>&lt;/CODE&gt;
+			&lt;ACTIONS1&gt;<font color="blue">Log</font>&lt;/ACTIONS1&gt;
+			&lt;CUSTOMACTIONS1&gt;<font color="blue">!pe;!clrstack;gn</font> &lt;/CUSTOMACTIONS1&gt;
+			&lt;RETURNACTION1&gt;<font color="blue">GN</font>&lt;/RETURNACTION1&gt;
+		&lt;/CONFIG&gt;
+		&lt;CONFIG&gt;
+			&lt;CODE&gt;<font color="blue">av</font>&lt;/CODE&gt;
+			&lt;ACTIONS1&gt;<font color="blue">Log</font>&lt;/ACTIONS1&gt;
+			&lt;CUSTOMACTIONS1&gt;<font color="blue">!pe;!clrstack;gn</font> &lt;/CUSTOMACTIONS1&gt;
+			&lt;RETURNACTION1&gt;<font color="blue">GN</font>&lt;/RETURNACTION1&gt;
+		&lt;/CONFIG&gt;
+	&lt;/EXCEPTIONS&gt;
+&lt;/ADPLUS&gt;
+        </pre>
+    </body>
+</html>

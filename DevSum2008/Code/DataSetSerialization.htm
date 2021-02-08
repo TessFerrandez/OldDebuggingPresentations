@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <link href="CodeStyle.css" rel="stylesheet" type="text/css" />
+        <title>Dataset Serialization</title>
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000">
+        <div class="SampleHeader" style="width:100%">
+            <div class="SampleTitle">
+                <table width="100%">
+                    <tr>
+                        <td><span id="Title" class="SampleTitle">Dataset Serialization</span></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <br />
+        <div align="center">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>UserName</th>
+                <th>IsUserAMemberOfTheAdministratorsGroup</th>            
+            </tr>  
+            <tr>
+                <td>0</td>
+                <td>Arne</td>
+                <td>Ask</td>
+                <td>ArneAsk</td>
+                <td>No</td>
+            </tr>      
+            <tr>
+                <td>1</td>
+                <td>Bo</td>
+                <td>Ek</td>
+                <td>BoEk</td>
+                <td>No</td>
+            </tr>      
+            <tr>
+                <td>2</td>
+                <td>Carl</td>
+                <td>Ceder</td>
+                <td>CarlCeder</td>
+                <td>Yes</td>
+            </tr>      
+            <tr>
+                <td>3</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>      
+        </table>   
+        <br />             
+        </div>
+<HR/>
+<div align="left">
+        <pre>
+Is serialized to:
+    <span style="color: blue"> 
+<span style="font-size: 12pt">&lt;</span></span><span style="font-size: 12pt"><span style="color: maroon">diffgr</span><span
+            style="color: blue">:</span><span style="color: maroon">diffgram</span> <span style="color: maroon">xmlns</span><span style="color: blue">:</span><span style="color: red">msdata</span><span
+                    style="color: blue">="urn:schemas-microsoft-com:xml-msdata"</span> <span style="color: maroon">xmlns</span><span style="color: blue">:</span><span style="color: red">diffgr</span><span
+                            style="color: blue">="urn:schemas-microsoft-com:xml-diffgram-v1"</span></span><span
+                                style="font-size: 12pt"><span style="color: blue">&gt;
+</span><span style="color: blue">	&lt;</span><span style="color: maroon">NewDataSet</span><span
+                                style="color: blue">&gt;</span> 
+		<span style="color: blue">&lt;</span><span style="color: maroon">ParentTable </span><span style="color: maroon">diffgr</span><span style="color: blue">:</span><span
+                style="color: red">id</span><span style="color: blue">="ParentTable1" </span><span style="color: maroon">msdata</span><span style="color: blue">:</span><span
+                style="color: red">rowOrder</span><span style="color: blue">="0"</span> <span style="color: maroon">diffgr</span><span style="color: blue">:</span><span style="color: red">hasChanges</span><span
+                        style="color: blue">="inserted"</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>0<span
+                style="color: blue">&lt;/</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">FirstName</span><span
+                style="color: blue">&gt;</span>Arne<span style="color: blue">&lt;/</span><span style="color: maroon">FirstName</span></span><span
+                    style="font-size: 12pt"><span
+                    style="color: blue">&gt; 
+			</span><span style="color: blue">&lt;</span><span style="color: maroon">LastName</span>&gt;Ask<span
+                        style="color: blue">&lt;/</span><span style="color: maroon">LastName</span><span
+                            style="color: blue">&gt;</span> 
+			<span style="color: blue">&lt;</span><span style="color: maroon">UserName</span><span
+                                style="color: blue">&gt;</span>ArneAsk<span style="color: blue">&lt;/</span><span
+                                    style="color: maroon">UserName</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                style="color: blue">&gt;</span>No<span style="color: blue">&lt;/</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                    style="color: blue">&gt;</span> 
+		<span style="color: blue">&lt;</span><span style="color: blue">/</span><span
+                        style="color: maroon">ParentTable</span><span style="color: blue">&gt;</span>
+            	<span style="color: blue">&lt;</span><span style="color: maroon">ParentTable </span><span style="color: maroon">diffgr</span><span style="color: blue">:</span><span
+                style="color: red">id</span><span style="color: blue">="ParentTable2" </span><span style="color: maroon">msdata</span><span style="color: blue">:</span><span
+                style="color: red">rowOrder</span><span style="color: blue">="0"</span> <span style="color: maroon">diffgr</span><span style="color: blue">:</span><span style="color: red">hasChanges</span><span
+                        style="color: blue">="inserted"</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>1<span
+                style="color: blue">&lt;/</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">FirstName</span><span
+                style="color: blue">&gt;</span>Bo<span style="color: blue">&lt;/</span><span style="color: maroon">FirstName</span></span><span
+                    style="font-size: 12pt"><span
+                    style="color: blue">&gt; 
+			</span><span style="color: blue">&lt;</span><span style="color: maroon">LastName</span>&gt;Ek<span
+                        style="color: blue">&lt;/</span><span style="color: maroon">LastName</span><span
+                            style="color: blue">&gt;</span> 
+			<span style="color: blue">&lt;</span><span style="color: maroon">UserName</span><span
+                                style="color: blue">&gt;</span>BoEk<span style="color: blue">&lt;/</span><span style="color: maroon">UserName</span><span
+                                    style="color: blue">&gt;</span> 
+			<span style="color: blue">&lt;</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                                        style="color: blue">&gt;</span>No<span style="color: blue">&lt;/</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                                            style="color: blue">&gt;</span> 
+		<span style="color: blue">&lt;</span><span style="color: blue">/</span><span
+                                                style="color: maroon">ParentTable</span><span style="color: blue">&gt;</span>
+            	<span style="color: blue">&lt;</span><span style="color: maroon">ParentTable </span><span style="color: maroon">diffgr</span><span style="color: blue">:</span><span
+                style="color: red">id</span><span style="color: blue">="ParentTable1" </span><span style="color: maroon">msdata</span><span style="color: blue">:</span><span
+                style="color: red">rowOrder</span><span style="color: blue">="0"</span> <span style="color: maroon">diffgr</span><span style="color: blue">:</span><span style="color: red">hasChanges</span><span
+                        style="color: blue">="inserted"</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>2<span
+                style="color: blue">&lt;/</span><span style="color: maroon">ID</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">FirstName</span><span
+                style="color: blue">&gt;</span>Carl<span style="color: blue">&lt;/</span><span style="color: maroon">FirstName</span></span><span
+                    style="font-size: 12pt"><span
+                    style="color: blue">&gt; 
+			</span><span style="color: blue">&lt;</span><span style="color: maroon">LastName</span>&gt;Ceder<span
+                        style="color: blue">&lt;/</span><span style="color: maroon">LastName</span><span
+                            style="color: blue">&gt;</span> 
+			<span style="color: blue">&lt;</span><span style="color: maroon">UserName</span><span
+                                style="color: blue">&gt;</span>CarlCeder<span style="color: blue">&lt;/</span><span
+                                    style="color: maroon">UserName</span><span style="color: blue">&gt;</span>
+            		<span style="color: blue">&lt;</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                style="color: blue">&gt;</span>Yes<span style="color: blue">&lt;/</span><span style="color: maroon">IsUserAMemberOfTheAdministratorsGroup</span><span
+                    style="color: blue">&gt;</span> 
+		<span style="color: blue">&lt;</span><span style="color: blue">/</span><span
+                        style="color: maroon">ParentTable</span><span style="color: blue">&gt;</span>
+            ...
+</span>
+<HR style="font-weight: bold" />
+<span style="font-size: 16pt">...but could potentially (using a dataset surrogate) be serialized to: 
+
+<span style="font-size: 12pt">	Arne,Ask,ArneAsk,No;Bo,Ek,BoEk,No;Carl,Ceder,CarlCeder,Yes;</span>
+    </span>
+
+        <pre><span style="font-size: 12pt"><span style="color: blue"></span></span>        </pre>
+</div>          
+
+    </body>
+</html>

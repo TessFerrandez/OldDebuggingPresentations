@@ -1,0 +1,52 @@
+﻿
+
+body { font: 16pt verdana; font-weight: bold; background-color: white; }
+div.code { background-color=dddddd; width="90%" background-color:cccccc; color:darkred; font-family:"courier new"; padding:5,5,5,5; }
+h4 { font: x-small verdana; font-weight:700 }
+h2 { font: small verdana;  }
+
+xmp { padding-left:30 ; color:darkred; }
+h3 { font-family:Verdana;  }
+
+.SampleHeader {
+  background-color: ffffee;
+  color: black;
+  padding: 6px;
+  border-color:black;
+  border:2,2,2,2;
+  border-style:solid
+}
+.SampleTitle {
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+.SampleDesc {
+  font-family: Verdana;
+  font-size: x-small;
+}
+.SamplePageText {
+  font-family: Verdana;
+  font-size: x-small;
+}
+.SampleSourceLink {
+  font-family: Tahoma;
+  font-size: x-small;
+}
+
+.SourceTitlePanel {
+  background-color: f1e0c6;
+  color: black;
+  font-family: verdana;
+  font-size: small;
+  font-weight: bold;
+  padding: 6px;
+}
+.SourcePanel {
+  background-color: gainsboro;
+  color: black;
+  font-family: 'Lucida Console';
+  font-size: x-small;
+  padding: 4px;
+}

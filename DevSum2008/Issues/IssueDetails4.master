@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Master Language="C#" %>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../MainStyles.css" />
+<asp:ContentPlaceHolder id="head" runat="server">
+</asp:ContentPlaceHolder>
+</head>
+
+<body style="margin: 0">
+	<form id="form1" runat="server">
+		<div style="border: thick groove; border-color: #808080; position: absolute; width: 350px; height: 170px; z-index: 3; left: 35px; top: 35px; background-color: #800000;" id="MainTableLayer" class="center">
+			<asp:ContentPlaceHolder id="MainTable" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		<div style="position: absolute; width: 40px; height: 40px; z-index: 4; left: 415px; top: 176px" id="CodeIcons">	
+			<asp:ContentPlaceHolder runat="server" id="CodeLink"></asp:ContentPlaceHolder>
+		</div>
+	</form>
+</body>
+
+</html>
